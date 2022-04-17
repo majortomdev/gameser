@@ -63,7 +63,7 @@ public class UserService {
         ResponseTemplateUWF userWF = new ResponseTemplateUWF();
         User user = userRepository.findByUserId(userId);
 
-        Field field = restTemplate.getForObject("http://localhost:9001/fields/" + user.getFieldId(), Field.class);
+        Field field = restTemplate.getForObject("http://FIELD-SERVICE/fields/" + user.getFieldId(), Field.class);
         userWF.setUser(user);
         userWF.setField(field);
         return userWF;
