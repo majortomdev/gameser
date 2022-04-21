@@ -12,6 +12,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.List;
+
 @Service
 @Slf4j
 public class UserService {
@@ -31,6 +33,11 @@ public class UserService {
     public User saveUser(User user) {
         log.info("inside saveUser of userService");
         return userRepository.save(user);
+    }
+
+    public List<User> getUsers() {
+        log.info("inside getUsers of userService");
+        return userRepository.findAll();
     }
 
 //    public ResponseTemplateUWF getUserWithField(Long userId) {

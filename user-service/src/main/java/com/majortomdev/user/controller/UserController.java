@@ -7,7 +7,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/users")
 @Slf4j
 public class UserController {
@@ -19,6 +22,12 @@ public class UserController {
     public User saveUser(@RequestBody User user) {
         log.info("inside saveUser of usercontroller");
         return userService.saveUser(user);
+    }
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("/")
+    public List<User> getUsers() {
+        log.info("inside getUsers of usercontroller");
+        return userService.getUsers();
     }
 
     @GetMapping("/{id}")
