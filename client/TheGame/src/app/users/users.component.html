@@ -8,16 +8,16 @@
       <th scope="col">Name</th>
       <th scope="col">Email</th> -->
       <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
+      <th>Username</th>
+      <th>Real Name</th>
       <th>Email</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let user of users">
       <td>{{ user.userId }}</td>
-      <td>{{ user.firstName }}</td>
-      <td>{{ user.lastName }}</td>
+      <td>{{ user.userName }}</td>
+      <td>{{ user.realName }}</td>
       <td><a href="mailto:{{ user.email }}">{{ user.email }}</a></td>
     </tr>
   </tbody>
